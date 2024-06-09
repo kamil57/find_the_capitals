@@ -1,0 +1,9 @@
+#include <stddef.h>
+size_t *find_capitals (const char *word, size_t *nb_uppercase) {
+  *nb_uppercase = 0;
+  size_t *cap = (size_t*)malloc( strlen(word) * sizeof( size_t ));
+  for( size_t i = 0; i < strlen(word); ++i ) {
+    if( word[i] >= 65 && word[i] <= 90 ) cap[(*nb_uppercase)++] = i;
+  }
+  return cap;
+}
